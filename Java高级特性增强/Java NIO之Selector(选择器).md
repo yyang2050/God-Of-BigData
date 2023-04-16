@@ -12,6 +12,7 @@ Selector一般称为选择器,当然你也可以翻译为多路复用器。它�
 ![e87095c49bef56cb3cce7c4529cac9ad](Java NIO之Selector(选择器).resources/C32A7750-CD6E-469A-8E9E-BEC983989522.png)
 使用Selector的好处在于:使用更少的线程来就可以来处理通道了,相比使用多个线程,避免了线程上下文切换带来的开销。
 
+
 #### Selector（选择器）的使用方法介绍
 **1. Selector的创建**
 通过调用Selector.open()方法创建一个Selector对象，如下：
@@ -116,7 +117,7 @@ SelectionKey key = channel.register(selector, SelectionKey.OP_READ, theObject);
 
 **select()方法介绍：**
 
-在刚初始化的Selector对象中，这三个集合都是空的。 通过Selector的select（）方法可以选择已经准备就绪的通道 （这些通道包含你感兴趣的的事件）。比如你对读就绪的通道感兴趣，那么select（）方法就会返回读事件已经就绪的那些通道。下面是Selector几个重载的select()方法：
+在刚初始化的Selector对象中，这三个集合都是空的。 通过Selector的select（）方法可以选择已经准备就绪的通道 （这些通道包含你感兴趣的事件）。比如你对读就绪的通道感兴趣，那么select（）方法就会返回读事件已经就绪的那些通道。下面是Selector几个重载的select()方法：
 
 * int select()：阻塞到至少有一个通道在你注册的事件上就绪了。
 * int select(long timeout)：和select()一样，但最长阻塞时间为timeout毫秒。

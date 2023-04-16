@@ -6,6 +6,7 @@
 
 [Apache-Kafka核心概念](http://link.zhihu.com/?target=http%3A//mp.weixin.qq.com/s%3F__biz%3DMzU3MzgwNTU2Mg%3D%3D%26mid%3D100000472%26idx%3D1%26sn%3D99353b901d1174c3edd4a9ebbe394975%26chksm%3D7d3d444d4a4acd5bf0017210f55ec394abda01d163674d540988ca94863a51411be951711553%23rd)
 
+
 [Apache-Kafka核心组件和流程-协调器](http://link.zhihu.com/?target=http%3A//mp.weixin.qq.com/s%3F__biz%3DMzU3MzgwNTU2Mg%3D%3D%26mid%3D100000476%26idx%3D1%26sn%3D34b2127b1a09664087e3b2079844c2db%26chksm%3D7d3d44494a4acd5f3bc70d914ae2842409282780d19d57043d168895e55f160b3be7835e2446%23rd)
 
 [Apache-Kafka核心组件和流程(副本管理器)](http://link.zhihu.com/?target=http%3A//mp.weixin.qq.com/s%3F__biz%3DMzU3MzgwNTU2Mg%3D%3D%26mid%3D100000480%26idx%3D1%26sn%3D054cdf620eb82c4ecfaccd226d49d0e0%26chksm%3D7d3d44754a4acd638ca37afcfdaad802bb3dec01758b18cdf2c607ec494526832ee58ff43451%23rd)
@@ -95,7 +96,7 @@ kafka引入协调器有其历史过程，原来consumer信息依赖于zookeeper�
 
 下图展示了不提交offset到服务端的问题：
 
-![image](http://upload-images.jianshu.io/upload_images/16241060-7af91d3eee99cd58.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![image](https://mmbiz.qpic.cn/mmbiz_jpg/UdK9ByfMT2O97piaBAkbLvms7mTItc3GmcJ3ibW26cdA9HYBPAS00Azia4DNfEkMbNc7mia1t8NEOoWibO4baM4RzmQ/640?tp=webp&wxfrom=5&wx_lazy=1&wx_co=1)
 
 开始时，consumer 0消费partition 0 和1，后来由于新的consumer 2入组，分区重新进行了分配。consumer 0不再消费partition2，而由consumer 2来消费partition 2，但由于consumer之间是不能通讯的，所有consumer2并不知道从哪里开始自己的消费。
 
